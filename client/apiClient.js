@@ -1,10 +1,25 @@
 import request from 'superagent'
 
-const rootUrl = '/api/v1'
 
-export function getFruits () {
-  return request.get(rootUrl + '/fruits')
-    .then(res => {
-      return res.body.fruits
+
+export function getScreenName (searchTerms) {
+  console.log('clientside api making request: ', searchTerms)
+  return request.get('/search')
+    .send(searchTerms)
+    .then(data => {
+      console.log('clientside api success');
+      return data      
     })
 }
+
+
+
+
+
+
+// export function getFruits () {
+//   return request.get(rootUrl + '/fruits')
+//     .then(res => {
+//       return res.body.fruits
+//     })
+// }
