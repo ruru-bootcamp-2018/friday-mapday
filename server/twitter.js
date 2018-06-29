@@ -8,10 +8,11 @@ var client = new Twitter({
   access_token_secret: 'gfsIr65ew4UupS62nIZ5oLPqugF0NQweY4dpA1r2zR8ry'
 });
 
-function basicSearch(callback) {
+function basicSearch(params, callback) {
     console.log('performing search request to twitter');
-    
-    var params = {q: 'rebecca is great', };
+    console.log(params);
+    //params = {q: params.screen_name, };
+
 
     client.get('search/tweets', params, function(error, tweets, response) {
       if (!error) {
@@ -20,6 +21,7 @@ function basicSearch(callback) {
         callback(tweets)
       }
     });
+    
 }
 
 module.exports = {

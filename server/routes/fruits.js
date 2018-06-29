@@ -5,9 +5,11 @@ const router = express.Router()
 const twitter = require('../twitter')
 
 router.get('/search', (req, res) => {
-  console.log('server route recieved request for search' + req.body);
+  console.log("Query ", req.query);
   
-  twitter.basicSearch(tweets => {
+  console.log('server route recieved request for search ', req.query.searchTerms);
+  
+  twitter.basicSearch( req.query.searchTerms, (tweets) => {
     console.log('route success');
     
     res.send({tweets})
@@ -15,3 +17,9 @@ router.get('/search', (req, res) => {
 })
 
 module.exports = router
+
+
+// twitter.basicSearch( req.query.searchTerms,(tweets) => {
+//   console.log('route success');
+  
+//   res.send({tweets})

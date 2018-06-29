@@ -20,7 +20,6 @@ class Display extends React.Component {
   
   
   render () {
-    console.log(this.state.tweets)
     return (
       <div className="Display">
         <h2>TWEETS ABOUT {this.state.tweets && this.state.tweets.tweets.search_metadata.query.split('+').join(' ')}</h2>
