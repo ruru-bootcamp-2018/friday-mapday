@@ -13,6 +13,7 @@ function basicSearch(params, callback) {
     console.log(params);
     //params = {q: params.screen_name, };
 
+
     client.get('search/tweets', params, function(error, tweets, response) {
       if (!error) {
         console.log('succesful search request to twitter');
