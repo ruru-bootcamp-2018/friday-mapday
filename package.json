@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn webpack",
+    "postinstall": "yarn build",
     "start": "node server",
     "dev": "nodemon server & yarn build --watch",
     "build": "webpack --config client/webpack.config.js",
