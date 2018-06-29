@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index & yarn build",
+    "start": "node server & yarn build",
     "dev": "nodemon server & yarn build --watch",
     "build": "webpack --config client/webpack.config.js",
     "test": "jest"
