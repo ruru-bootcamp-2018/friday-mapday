@@ -1,0 +1,8 @@
+.app {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.Display {
+  grid-column-start: 2;
+}

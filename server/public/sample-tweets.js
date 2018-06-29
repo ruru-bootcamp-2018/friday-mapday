@@ -1,4 +1,4 @@
-{ statuses: 
+let tweets = { statuses: 
    [ { created_at: 'Thu Jun 28 22:45:56 +0000 2018',
        id: 1012467161204437000,
        id_str: '1012467161204436992',
@@ -393,3 +393,5 @@
      count: 15,
      since_id: 0,
      since_id_str: '0' } }
+
+     export default tweets

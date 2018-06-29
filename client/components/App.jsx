@@ -1,31 +1,28 @@
 import React from 'react'
+import Display from './Display'
 
-import {getFruits} from '../apiClient'
+
+import { getFruits } from '../apiClient'
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       fruits: []
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     getFruits()
       .then(fruits => {
-        this.setState({fruits})
+        this.setState({ fruits })
       })
   }
 
-  render () {
+  render() {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate</h1>
-        <ul>
-          {this.state.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+        <Display />
       </div>
     )
   }
