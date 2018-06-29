@@ -1,9 +1,7 @@
 import React from 'react'
 import SingleTweet from './SingleTweet'
 
-const Display = props => {
-  console.log(props);
-  return (
+const Display = props => (
       <div className="Display">
         <h2>TWEETS ABOUT {props.tweets.tweets.search_metadata.query.split('+').join(' ')}</h2>
         <ul>
@@ -13,6 +11,5 @@ const Display = props => {
         </ul>
       </div>
     )
-  }
 
 export default Display
