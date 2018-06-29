@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      searchresults: {}
+      searchresults: null
     }
 
     this.finishSearch = this.finishSearch.bind(this);
@@ -34,8 +34,7 @@ class App extends React.Component {
     return (
       <div className='app'> 
         <Form finishSearch={this.finishSearch}/>      
-        <Display />
-          
+        {this.state.searchresults && <Display tweets={this.state.searchresults}/>}
       </div>
     )
   }
