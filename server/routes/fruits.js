@@ -1,14 +1,17 @@
 const express = require('express')
 
-const db = require('../db')
-
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  db.getFruits()
-    .then(fruits => {
-      res.json({fruits})
-    })
+const twitter = require('../twitter')
+
+router.get('/search', (req, res) => {
+  console.log('server route recieved request for search' + req.body);
+  
+  twitter.basicSearch(tweets => {
+    console.log('route success');
+    
+    res.send({tweets})
+  })
 })
 
 module.exports = router

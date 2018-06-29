@@ -1,4 +1,5 @@
 var Twitter = require('twitter');
+const fs = require('fs')
 
 var client = new Twitter({
   consumer_key: 'y3dr9J31XeIkl2Sh7URGvxV9X',
@@ -7,12 +8,27 @@ var client = new Twitter({
   access_token_secret: 'gfsIr65ew4UupS62nIZ5oLPqugF0NQweY4dpA1r2zR8ry'
 });
 
-var params = {q: 'kanyewest', };
+function basicSearch(callback) {
+    console.log('performing search request to twitter');
+    
+    var params = {q: 'kanyewest', };
 
-client.get('search/tweets', params, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }
-});
+    client.get('search/tweets', params, function(error, tweets, response) {
+      if (!error) {
+        console.log('succesful search request to twitter');
+        console.log(tweets.statuses.map(e => `${e.user.screen_name} says ${e.text}`));
+        callback(tweets)
+      }
+    });
+}
+
+module.exports = {
+    basicSearch
+}
+
+// basicSearch(tweets => {
+//     fs.writeFileSync('./example-tweets.js', JSON.stringify(tweets, null, 2))
+// })
+
 
 // console.log(tweets.map(e => e.user.location));
