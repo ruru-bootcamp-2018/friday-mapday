@@ -1,4 +1,5 @@
 var Twitter = require('twitter');
+const fs = require('fs')
 
 var client = new Twitter({
   consumer_key: 'y3dr9J31XeIkl2Sh7URGvxV9X',
@@ -24,5 +25,10 @@ function basicSearch(callback) {
 module.exports = {
     basicSearch
 }
+
+// basicSearch(tweets => {
+//     fs.writeFileSync('./example-tweets.js', JSON.stringify(tweets, null, 2))
+// })
+
 
 // console.log(tweets.map(e => e.user.location));
