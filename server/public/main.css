@@ -16,6 +16,7 @@ h2 {
 .tweetText {
   margin: 0;
   padding-left: 10px;
+  color: white;
 }
 
 .tweetImg {
@@ -25,7 +26,8 @@ h2 {
 .tweetContainer {
   display: flex;
   border: 10px;
-  background-color: aqua;
+  background-color: #1da1f2;
+  border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }

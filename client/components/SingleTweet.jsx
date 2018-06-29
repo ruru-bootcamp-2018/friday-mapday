@@ -1,9 +1,8 @@
 import React from 'react'
 
 const SingleTweet = (props) => {
-  console.log(props.tweet.user.profile_image_url)
   return (
-    <div className="tweetContainer">
+    <div className="tweetContainer" style={{backgroundImage: `url(${props.tweet.user.profile_banner_url})`}}>
       <div className="tweetImg">
         <img src={props.tweet.user.profile_image_url}/>
       </div>
