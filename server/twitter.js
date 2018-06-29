@@ -11,7 +11,7 @@ var client = new Twitter({
 function basicSearch(callback) {
     console.log('performing search request to twitter');
     
-    var params = {q: 'kanyewest', };
+    var params = {q: 'rebecca is great', };
 
     client.get('search/tweets', params, function(error, tweets, response) {
       if (!error) {

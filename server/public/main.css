@@ -5,4 +5,30 @@
 
 .Display {
   grid-column-start: 2;
+  font-family: 'PT Sans', sans-serif;
+}
+
+h2 {
+  font-family: 'Black Ops One', sans-serif;
+}
+
+.tweetText {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.tweetImg {
+  padding: 5px;
+}
+
+.tweetContainer {
+  display: flex;
+  border: 10px;
+  background-color: aqua;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style: none;
 }

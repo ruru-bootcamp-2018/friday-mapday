@@ -1,24 +1,34 @@
 import React from 'react'
-import tweets from '../../server/public/sample-tweets'
+import {getScreenName} from '../apiClient'
+import SingleTweet from './SingleTweet'
 
 class Display extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tweets: {}
+      tweets: null
     } //state
   } //constructor
   
+  componentDidMount() {
+    getScreenName()
+    .then(results => {
+      this.setState({tweets:results})
+    }
+    )
+  }
   
   
   render () {
-    console.log(tweets)
-    let tweetArray = tweets.statuses;
+    console.log(this.state.tweets)
     return (
       <div className="Display">
-        <h3>TWEETS ABOUT {tweets.search_metadata.query}</h3>
+        <h2>TWEETS ABOUT {this.state.tweets && this.state.tweets.tweets.search_metadata.query.split('+').join(' ')}</h2>
         <ul>
-          {tweetArray.map( data => <li>butts: {data.user_name} {data.text} </li>)}
+          {this.state.tweets && this.state.tweets.tweets.statuses.map( data => (
+          <li>butts: <SingleTweet tweet={data}/> </li>
+        ))
+      }
         </ul>
       </div>
     )
