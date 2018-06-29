@@ -7,16 +7,6 @@ import { getFruits } from '../apiClient'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      fruits: []
-    }
-  }
-
-  componentDidMount() {
-    getFruits()
-      .then(fruits => {
-        this.setState({ fruits })
-      })
   }
 
   render() {
