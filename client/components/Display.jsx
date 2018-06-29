@@ -12,7 +12,7 @@ class Display extends React.Component {
   
   
   render () {
-    console.log(tweets)
+    //console.log(tweets)
     let tweetArray = tweets.statuses;
     return (
       <div className="Display">

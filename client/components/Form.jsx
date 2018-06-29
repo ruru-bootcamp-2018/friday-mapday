@@ -7,7 +7,7 @@ class Form extends React.Component {
     super(props)
 
     this.state = {
-      screen_name: ''
+      q: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -20,16 +20,18 @@ class Form extends React.Component {
     })
   }
   
-  doSearch () {
-      console.log('doing serach with ', this.state);
+  doSearch (e) {
+    e.preventDefault();
+    console.log('Form: doing serach with ', this.state);
     this.props.finishSearch(this.state)
   }
 
   render () {
+    console.log("rendering form")
     return (
-      <div>
+      <div className="form">
         <form>
-            <p><input placeholder="screen name" name="screen_name"
+            <p><input placeholder="screen name" name="q"
                 onChange={this.handleChange}
                 value={this.state.name}/></p>
             <button onClick={this.doSearch}>Submit</button>

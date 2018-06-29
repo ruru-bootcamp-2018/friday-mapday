@@ -5,10 +5,10 @@ import request from 'superagent'
 export function getScreenName (searchTerms) {
   console.log('clientside api making request: ', searchTerms)
   return request.get('/search')
-    .send(searchTerms)
+    .query({searchTerms})
     .then(data => {
       console.log('clientside api success');
-      return data      
+      return data.body      
     })
 }
 
