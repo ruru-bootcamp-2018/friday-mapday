@@ -1,6 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(grey, slategrey)
+}
+
 .app {
   display: grid;
   grid-template-columns: 25% 75%;
+  
 }
 
 .Display {
@@ -16,11 +26,12 @@ h2 {
 .tweetText {
   margin: 0;
   padding-left: 10px;
-  color: white;
+  color: black;
 }
 
 .tweetImg {
   padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .tweetContainer {
@@ -36,3 +47,7 @@ li {
   list-style: none;
 }
 
+.form {
+  padding-left: 30px;
+  padding-top: 70px;
+}

@@ -6,7 +6,7 @@ const Display = props => (
         <h2>TWEETS ABOUT {props.tweets.tweets.search_metadata.query.split('+').join(' ')}</h2>
         <ul>
           {props.tweets.tweets.statuses.map( data => (
-            <li>butts: <SingleTweet tweet={data}/> </li>
+            <li><SingleTweet tweet={data}/> </li>
           ))}
         </ul>
       </div>
